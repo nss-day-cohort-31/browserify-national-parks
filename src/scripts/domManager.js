@@ -4,11 +4,20 @@ export default {
     if (elementId) {
       htmlElement.setAttribute("id", elementId);
     }
-  
+
     if (elementValue) {
       htmlElement.setAttribute("value", elementValue);
     }
     htmlElement.textContent = elementTextContent;
     return htmlElement;
+  },
+  clearElement(domElement) {
+    while (domElement.firstChild) {
+      domElement.removeChild(domElement.firstChild);
+    }
+  },
+  createAndAppendSection(sectionId) {
+    const displayContainer = document.querySelector("#display-container");
+    displayContainer.appendChild(this.buildElement("section", sectionId));
   }
-}
+};

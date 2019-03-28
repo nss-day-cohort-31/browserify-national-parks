@@ -1,5 +1,6 @@
 import apiManager from "./apiManager";
 import parkModule from "./park";
+import domManager from "./domManager";
 
 const listParks = {
   listNationalParks() {
@@ -13,7 +14,7 @@ const listParks = {
       });
 
       const nationalParksSection = document.querySelector("#national--parks");
-      clearElement(nationalParksSection);
+      domManager.clearElement(nationalParksSection);
       nationalParksSection.appendChild(nationParksFragment);
     });
   }
